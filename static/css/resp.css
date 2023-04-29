@@ -1,0 +1,59 @@
+@media screen and (min-width:777px){
+    .nav-link {
+      padding:18px 0;
+      min-width:120px;
+    }
+    .navbar {
+      padding: 0
+    }
+  .sekil-none{
+    display: none;
+  }
+  }
+
+@media screen and  (max-width:427px) {
+  .salam{
+      display: block !important;
+      width: 100%;
+  }
+  .salam h3 {
+    padding-left: 0px !important;
+  }
+  .salam a {
+    padding-left: 0px !important;
+  }
+  .flex{
+    text-align: center;
+    display: block  !important;
+  }
+  .col-sm-3{
+    width: 100% !important;
+  }
+  .col-sm {
+    padding-bottom: 20px;
+    
+  }
+  .width {
+    width: 100% !important;
+  }
+  .card {
+    width: 100% !important;
+     
+  }
+  #ikinci-2{
+    width: 100% !important;
+  }
+  #ucuncu-3{
+    width: 100% !important;
+  }
+  .reng {
+    margin-left: 0px !important;
+    padding-top: 20px;
+  }
+  .gizlet {
+    padding-left: 0px !important;
+  }
+  .sifir {
+    font-size: 20px !important;
+  }
+}

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo</title><link rel="stylesheet" href="{{url_for('static', filename='css/turboaz.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="icon"href="https://turbo.azstatic.com/assets/favicons/favicon-192x192-ad156dea797e1d05604d12bf4c3f9e0285bc9f34429a3306f70a3cd3401a8df9.png" >
+    <link rel="stylesheet" href="{{url_for('static', filename='css/animasya.css')}}">    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/resp.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
+</head>
+<body>
+  <nav style="background-color:#ca1016;height: 70px;" class="navbar navbar-expand-lg sticky-top navbar-light p-3">
+    <div style="padding-top: 0px;" class="container">
+      <a class="navbar-brand text-white " href="/cars"><i></i> <strong>MASHIN.SAT</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class=" collapse navbar-collapse" id="navbarNavDropdown"> 
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase  text-white  active text-animationn-2 qaqa "   aria-current="page" href="#">Bütün elanlar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase text-white  text-animationn-2 qaqa " href="#">Aftosalonlar</a>
+          </li>
+          <li class="nav-item dropdown " >
+            <a class="nav-link mx-2 text-uppercase  text-white text-animationn-2  dropbtn  qaqa " href="javascript:void(0)">Ehtiyat hissələr və aksesuarlar</a>
+            <div class="dropdown-content"   >
+              <a style="color: black;" href="#">Aksesuarlar</a>
+              <a style="color: black;" href="#">Audio və video texnika </a>
+              <a style="color: black;" href="#">Avtokosmetika və avtokimya </a>
+              <a style="color: black;" href="#">Ehtiyat hissələr </a>
+              <a style="color: black;" href="#">GPS naviqatorlar </a>
+              <a style="color: black;" href="#">Qeydiyyat nişanları </a>
+              <a style="color: black;" href="#">Siqnalizasiyalar   </a>
+              <a style="color: black;" href="#">Videoqeydiyyatçılar   </a>
+              <a style="color: black;" href="#">Şinlər, disklər və təkərlər   </a>
+              <a style="color: black;" href="#">Digər</a>
+            </div>
+          </li> 
+        </ul>
+        <ul class="navbar-nav ms-auto" >
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase text-animationn-2  salam " href="/add-car"><button class=" btn-1 " >Yeni Elan</button></a>
+          </li>  
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="main container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="text-2">{{car.model}} {{car.marka}} ,{{car.muherrik}}, {{car.buraxilis_ili}}, {{car.yurus}}km</h1>
+          <div  id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/static/uploads/{{car.img}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/static/uploads/{{car.img}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/static/uploads/{{car.img}}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div style="display: flex;">
+            <div>
+              <p>Yeniləndi: 26.02.2023 .  Baxışların sayı: 58739</p>
+              <p class="p-text">Marka</p>
+              <p class="p-text">Model</p>
+              <p class="p-text">Buraxılış ili</p>
+              <p class="p-text">Ban növü</p>
+              <p class="p-text">Reng</p>
+              <p class="p-text">Mühərrik</p>
+              <p class="p-text">Yürüş</p>
+              <hr>
+              <div style="margin-top: 45px;">
+                <p style="font-family: sans-serif;">İdeal vəziyyətdədir heç bir xərc tələb etmir. <br> Yenidir Bez kraskadi Alverciler narahat etmesin </p>
+                <hr>
+              </div>
+            </div>
+            <div style="margin-top: 40px;">   
+              <a style="color:black;" href="">{{car.seher}}</a>
+              <br>
+              <br>             
+              <a style="color:black;" href=""> {{car.marka}}</a>
+              <br> 
+              <br>
+              <a style="color:black;" href="">{{car.buraxilis_ili}} il</a>
+              <p>{{ban_novu}}</p>
+              <p>{{car.reng}}</p>
+              <p style="margin-top: -15px;">{{car.muherrik}}</p>
+              <p style="margin-top: -15px;">{{car.yurus}} </p>
+            </div>
+            <div style="margin-top: 20px;">
+              <p class="p-text">Sürətlər qutusu</p>
+              <p class="p-text">Ötürücü</p>
+              <p class="p-text">Yeni</p>
+              <p class="p-text">Vəziyyəti</p>
+            </div>
+            <div style="margin-top: 40px;margin-left: 25px;">
+              <p class="p-text2">  {{car.suretler_qutusu}} </p>
+              <p class="p-text2">  {{car.oturucu}}</p>
+              <p class="p-text2">  {{car.yeni}}</p>
+              <p class="p-text2">Vuruğu yoxdur, <br> rənglənməyib</p>
+              <hr>
+            </div>
+            <hr>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <a href=""><img class="img-1" src="{{url_for('static', filename='img/heart.png')}}" alt=""></a>
+          <a style="color: black;" href="">Seçilmişlərdə saxla</a>
+          <a href=""><img class="img-1" src="{{url_for('static', filename='img/red-flag.png')}}" alt=""></a>
+          <a style="color: black;" href="">Şikayət et</a>
+          <div style="height: 600px; border-radius: 10px;border: 1px solid #4c88f9;width: 332px;background-color: #f6f7fa;">
+            <div>
+                <div>
+                    <h1 style="margin-left: 19px;" class="text-1" >165 555 USD</h1>
+                    <h1 style="margin-left: 19px;" class="text-1">=281 444 AZN</h1>
+                    <hr >
+                </div>
+                <div>
+                  <h1 class="text-1"><img style="width: 55px;border-radius: 10px;margin-left: 15px;" src="{{url_for('static', filename='img/auto.png')}}" alt="">AvtoSalon "Auto Gallery"</h1>
+                  <button style="width: 264px;;border-radius: 5px; color: white; border: 1px solid #3db460; background-color: #3db460; margin-left: 32px;height: 70px;">Nomreni goster <br> <img style="width: 25px;" src="{{url_for('static', filename='img/telephone.png')}}" alt=""> (050)486 24 04 </button>
+                   <hr>
+                </div>
+                <div>
+                  <p style="margin-left: 19px;">Əsərlərə bənzər avtomobillərin <br> qalereyası...</p>
+                  <p style="color:#8d94ad; font-family: sans-serif;margin-left: 19px; font-size: 14px;">Qalereyamızda dünya avtomobil <br> markaların şah əsərləri sərg olunur. Zövglü <br> və idealist insanlar üçün qalereyamızın</p>
+                  <a style="margin-left: 19px; color:black; font-family: sans-serif;" href="">24 elan</a>
+                  <hr>
+                </div>
+                <div>
+                  <p style="font-family: sans-serif;font-size: 15px;"><img class="img_clock" src="{{url_for('static', filename='img/clock.png')}}" alt="">Hər gün: 08:00-20:00</p>
+                  <a style="font-family: sans-serif;font-size: 15px; color: black;" href=""><img class="img_clock" src="{{url_for('static', filename='img/maps-and-flags.png')}}" alt="">Bakı ş., Nərimanov r., A.MollaCümə  </a>
+                  <a href="https://turbo.az/avtosalonlar/avtosalon-autogallery"> <button style="width: 250px;;border-radius: 8px; color: white; border: 1px solid #4c88f9; background-color: #4c88f9;margin-left: 47px;height: 44px; margin-top: 16px;">Salona Keç </button></a>
+                </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-4">
+                <a href=""> <button style="background-color: #f6f7fa;border: 1px solid #eaebf2;">İrəli çək <br> <span style="color: #1e6e9d;;">3 Azd-dən</span></button></a>
+              </div>
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-1 container" style="margin-top: 30px;">
+    <div style="background-color: #f6f7fa; ">
+      <div class="container-fluid">
+        <div class="row">
+    {% for car in cars %}
+          <div class="col-sd-3">
+            <div class="card">
+              <a href="" style="text-decoration: none;">
+                <img style="width: 100%;" src="/static/uploads/{{car.img}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="">28000 AZN</h5>
+                  <h6 class="">LADA</h6>
+                  <h6>2022.06.12</h6>
+                  <p>Baki,03,030303</p>
+                </div>
+              </a>
+            </div>
+          </div>
+    {% endfor %}
+        </div>
+      </div>
+    </div> 
+  </div>
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section style="margin-top: 100px;" class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="me-5 d-none d-lg-block">
+      <span>Reklam yerləşdirin</span>
+    </div>
+    <div>
+       <a href=""> <button style="width: 264px;;border-radius: 5px; color: black; border: 1px solid  #eaebf2;; background-color:  #eaebf2;; margin-left: 32px;height: 70px;">(012) 599-08-01 <br> <img style="width: 25px; margin-top: -23px;" src="{{url_for('static', filename='img/telephone.png')}}" alt=""> (012) 505-77-55  </button></a> 
+      <p>turbo@turo.az</p>
+    </div>
+  </section>
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2">
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Abarth(3)</a>
+            </div>
+            <hr>
+          </div>
+          <div class="col-md-2">
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <hr>
+          </div>
+          <div class="col-md-2">
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <hr>
+          </div>
+          <div class="col-md-2">
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <hr>
+          </div>
+          <div class="col-md-2">
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <hr>
+          </div>
+          <div class="col-md-2">
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3"  href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Bentley(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Mercedes(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <div>
+              <a class="text-3" href="">Abarth(3)</a>
+            </div>
+            <hr>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3">
+                <a class="text-4" href="">Qaydalar</a>
+              </div>
+              <div class="col-md-3">
+                <a class="text-4" href="">Qanun</a>
+              </div>
+              <div class="col-md-3">
+                <a class="text-4" href="">İstifadəçi razılaşması</a>
+              </div>
+              <div class="col-md-3">
+                <a class="text-4" href="">Məxfilik siyasəti</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div  class="text-center p-4" style="margin-top: 20px; background-color: #ca1016; color: #fff;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <p>Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş  elanların məzmununa görə məsuliyyət daşımır.</p>
+        </div>
+        <div class="col-md-6">
+          <p>2006-2023 Digital Classifieds MMC. VÖEN: 1405631661 </p>
+          <a style="color: #fff;" href="">Mobil versiyası</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<marquee behavior="" direction="">Turbo.az nedi qaqaaa</marquee>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</body>
+</html>
